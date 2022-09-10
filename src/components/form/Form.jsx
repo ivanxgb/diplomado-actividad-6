@@ -1,10 +1,9 @@
 import React from "react";
-import { nanoid } from "nanoid";
 
 const Form = ({ name, setName, lastname, setLastname, saveUser, saveEdit, editMode }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    !editMode && saveUser({ id: nanoid(), name, lastname });
+    !editMode && saveUser({ name, lastname });
     editMode && saveEdit();
     setName("");
     setLastname("");
